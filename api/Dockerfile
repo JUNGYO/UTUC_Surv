@@ -1,11 +1,10 @@
-FROM python:3.8.3
-WORKDIR /api/
-ENV TZ=Asia/Seoul
-ENV VIRTUAL_ENV=/api/.venv
-ENV PATH=${VIRTUAL_ENV}/bin:$PATH
-RUN python -m venv ${VIRTUAL_ENV}
-COPY requirements.txt /api/requirements.txt
-RUN pip install --upgrade pip && pip install --no-cache-dir -r requirements.txt
-COPY . .
-ENTRYPOINT ["python"]
-CMD ["app.py"]
+FROM python:3.8-slim
+
+WORKDIR /app
+
+COPY requirements.txt ./requirements.txt
+RUN pip install -r requirements.txt
+
+COPY . /app
+
+CMD ["streamlit", "run", "app.py"]
