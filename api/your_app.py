@@ -38,7 +38,7 @@ input_params.update({
         index=2  
     ),
     'Path_Grade': st.sidebar.radio('Path_Grade', ['Low Grade', 'High Grade']) == 'Path_Grade',
-    'Path_CIS': st.sidebar.checkbox('Path CIS?')
+    'Path_CIS': st.sidebar.checkbox('CIS on your pathologic specimen?')
 })
 
 # Update 'Female' to 'Sex' column and map path_T and Path_N to their numeric values
@@ -53,18 +53,18 @@ features_df = pd.DataFrame([input_params])[ordered_columns]
 # Model prediction and plotting
 if st.sidebar.button('Predict'):
     fig, ax = plt.subplots(figsize=(10, 6))
-    ax.set_xlabel('Years after Surgery')
+    ax.set_xlabel('Months after Surgery')
     ax.set_ylabel('Survival Probability')
     ax.set_xlim([-0.01, 131])
     ax.set_ylim([0.0, 1.01])
     ax.grid(True)
     
     survival_data_pfs, upper_ci_pfs, lower_ci_pfs = model_pfs.predict(features_df, return_ci=True)
-    ax.plot(survival_data_pfs.columns, survival_data_pfs.mean(), label="AI predicted PFS survival")
+    ax.plot(survival_data_pfs.columns, survival_data_pfs.mean(), label="AI predicted your PFS")
     ax.fill_between(survival_data_pfs.columns, lower_ci_pfs.mean(), upper_ci_pfs.mean(), alpha=0.2)
     
     survival_data_css, upper_ci_css, lower_ci_css = model_css.predict(features_df, return_ci=True)
-    ax.plot(survival_data_css.columns, survival_data_css.mean(), label="AI predicted CSS survival")
+    ax.plot(survival_data_css.columns, survival_data_css.mean(), label="AI predicted your CSS")
     ax.fill_between(survival_data_css.columns, lower_ci_css.mean(), upper_ci_css.mean(), alpha=0.2, color='orange')
     
     ax.legend()
