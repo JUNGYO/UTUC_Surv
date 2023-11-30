@@ -1,11 +1,11 @@
 ,,Missing,Overall
 n,,,627
 "index, mean (SD)",,0,210.2 (158.6)
-"Age, mean (SD)",,0,68.6 (10.1)
+"Age, median [Q1,Q3]",,0,"70.0 [62.0,76.0]"
 "Female, n (%)",0,0,446 (71.1)
 "Female, n (%)",1,,181 (28.9)
-"BMI, mean (SD)",,0,25.1 (13.2)
-"Pre_GFR, mean (SD)",,0,81.5 (40.5)
+"BMI, median [Q1,Q3]",,0,"24.5 [22.6,26.4]"
+"Pre_GFR, median [Q1,Q3]",,0,"75.3 [58.5,95.6]"
 "Location_Pelvis, n (%)",0,0,310 (49.4)
 "Location_Pelvis, n (%)",1,,317 (50.6)
 "Location_multiple, mean (SD)",,0,1.2 (0.5)
@@ -19,8 +19,8 @@ n,,,627
 "Path_CIS, n (%)",1.0,,251 (40.9)
 "Prg, n (%)",0.0,0,465 (74.2)
 "Prg, n (%)",1.0,,162 (25.8)
-"PFS, mean (SD)",,0,41.6 (30.8)
+"PFS, median [Q1,Q3]",,0,"36.0 [14.0,61.0]"
 "OS, n (%)",0.0,0,443 (70.7)
 "OS, n (%)",1.0,,184 (29.3)
-"Surv, mean (SD)",,0,45.8 (28.8)
+"Surv, median [Q1,Q3]",,0,"41.0 [23.0,64.5]"
 "hospital, n (%)",AMC,0,627 (100.0)
